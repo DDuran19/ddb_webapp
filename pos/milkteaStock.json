@@ -1,0 +1,23 @@
+[
+    {"flavor": "Classic", "instock": true, "amount": 250},
+    {"flavor": "Taro", "instock": true, "amount": 200},
+    {"flavor": "Matcha", "instock": false, "amount": 0},
+    {"flavor": "Honeydew", "instock": true, "amount": 220},
+    {"flavor": "Thai", "instock": true, "amount": 240},
+    {"flavor": "Mango", "instock": true, "amount": 210},
+    {"flavor": "Strawberry", "instock": false, "amount": 0},
+    {"flavor": "Oolong", "instock": true, "amount": 200},
+    {"flavor": "Almond", "instock": true, "amount": 230},
+    {"flavor": "Brown Sugar", "instock": true, "amount": 250},
+    {"flavor": "Wintermelon", "instock": true, "amount": 210},
+    {"flavor": "Jasmine", "instock": false, "amount": 0},
+    {"flavor": "Chocolate", "instock": true, "amount": 220},
+    {"flavor": "Caramel", "instock": true, "amount": 240},
+    {"flavor": "Lavender", "instock": true, "amount": 210},
+    {"flavor": "Peach", "instock": false, "amount": 0},
+    {"flavor": "Earl Grey", "instock": true, "amount": 200},
+    {"flavor": "Green Apple", "instock": true, "amount": 230},
+    {"flavor": "Red Bean", "instock": true, "amount": 250},
+    {"flavor": "Coconut", "instock": true, "amount": 210}
+  ]
+  

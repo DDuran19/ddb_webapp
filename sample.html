@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .recyclerview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+
+    .item {
+      background-color: #f2f2f2;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .item:hover {
+      background-color: #e6e6e6;
+    }
+
+    .attribute {
+      padding: 5px;
+    }
+
+    .flavor {
+      font-weight: bold;
+    }
+
+    .instock {
+      color: green;
+    }
+
+    .instock::before {
+      content: "✓ ";
+    }
+
+    .amount {
+      font-size: 12px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="recyclerview">
+    <div class="item">
+      <div class="attribute flavor">Classic</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">250</div>
+    </div>
+    <!-- Repeat the above structure for each item -->
+    <div class="item">
+      <div class="attribute flavor">Taro</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">200</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Matcha</div>
+      <div class="attribute instock">Out of Stock</div>
+      <div class="attribute amount">0</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Honeydew</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">220</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Thai</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">240</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Mango</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">210</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Strawberry</div>
+      <div class="attribute instock">Out of Stock</div>
+      <div class="attribute amount">0</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Oolong</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">200</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Almond</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">230</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Brown Sugar</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">250</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Wintermelon</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">210</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Jasmine</div>
+      <div class="attribute instock">Out of Stock</div>
+      <div class="attribute amount">0</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Chocolate</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">220</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Caramel</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">240</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Lavender</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">210</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Peach</div>
+      <div class="attribute instock">Out of Stock</div>
+      <div class="attribute amount">0</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Earl Grey</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">200</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Green Apple</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">230</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Red Bean</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">250</div>
+    </div>
+    <div class="item">
+      <div class="attribute flavor">Coconut</div>
+      <div class="attribute instock">In Stock</div>
+      <div class="attribute amount">210</div>
+    </div>
+  </div>
+</body>
+</html>

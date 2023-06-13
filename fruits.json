@@ -1,0 +1,11 @@
+[
+    { "value": "apple", "label": "Apple" },
+    { "value": "banana", "label": "Banana" },
+    { "value": "orange", "label": "Orange" },
+    { "value": "kiwi", "label": "Kiwi" },
+    { "value": "strawberry", "label": "Strawberry" },
+    { "value": "mango", "label": "Mango" },
+    { "value": "pineapple", "label": "Pineapple" },
+    { "value": "watermelon", "label": "Watermelon" }
+  ]
+  
