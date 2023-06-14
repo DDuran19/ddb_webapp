@@ -43,8 +43,14 @@ body {
     height: auto;
     background-color: var(--secondary-button);
     margin-bottom: 1px;
+    display: block;
+    cursor:pointer;
 }
-.flavor-container:hover{background-color: var(--main-theme-green); border-color: black;}
+#flavorList > input{
+    display: none;
+    cursor: pointer;
+}
+#flavorList > input:checked + .flavor-container{background-color: var(--main-theme-green); border-color: black;}
 
 
 
