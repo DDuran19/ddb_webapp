@@ -14,8 +14,8 @@ function generateFlavor(data){
     data.forEach(item => {
         const newItemRadio = document.createElement("input")
         newItemRadio.setAttribute("id",item.flavor);
-        newItemRadio.setAttribute("type","radio");
         newItemRadio.setAttribute("name", "flavors");
+        newItemRadio.setAttribute("type","radio");
         newItemRadio.setAttribute("value", item.flavor);
 
         flavorList.appendChild(newItemRadio)
@@ -25,7 +25,7 @@ function generateFlavor(data){
         const newItemInstock = document.createElement("span")
         const newItemClass = item.instock ? "flavor-item green" : "flavor-item red" ;
 
-        newItem.setAttribute("class", "flavor-container");
+        newItem.setAttribute("class", "container flavor-container");
         newItem.setAttribute("for",item.flavor);
         newItemName.appendChild(document.createTextNode(item.flavor))     
 
@@ -69,7 +69,8 @@ fetch("milktea.json")
     })
     .then((response) => {
         generateAddons(response)
-    })
+    });
+
 function generateAddons(data){
     data.forEach(addOn => {
         

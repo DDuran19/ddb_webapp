@@ -7,8 +7,9 @@
     
     --main-theme-biege: #f8d4bc;
     --main-theme-green: #bcf8d4;
-    --background-gradient: linear-gradient(120deg, var(--main-theme-biege), var(--main-theme-green))
+    --background-gradient: linear-gradient(120deg, var(--main-theme-biege), var(--main-theme-green));
 
+    --DDB-logo: url("../images/logo/ddb_wide_logo.png");
 }
 
 *,*::before*::after {
@@ -24,27 +25,38 @@ body {
     overflow: hidden;
     background: var(--background-gradient)
 }
+img{
+    width: 200px;
+}
+
+.main-grid{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .flavors{
     overflow-y: scroll;
     overflow-x: hidden;
     max-height: 100vh;
+    max-height: 100svh;
     padding: 10px;
-    width: fit-content;;
-
+    width: fit-content;
 }
 .flavor-name{
     font-weight: bold;
 }
 .flavor-container{
-    border: 2px solid gray;
-    border-radius: 20px;
-    padding-left: 20px;
-    width: 10em;
-    height: auto;
-    background-color: var(--secondary-button);
     margin-bottom: 1px;
     display: block;
     cursor:pointer;
+}
+.container{
+    font-size: clamp(0.2em, 1vw + 1em,1.5em);
+    border: 2px solid gray;
+    border-radius: 20px;
+    padding-left: 20px;
+    background-color: var(--secondary-button);
 }
 #flavorList > input{
     display: none;
@@ -52,7 +64,17 @@ body {
 }
 #flavorList > input:checked + .flavor-container{background-color: var(--main-theme-green); border-color: black;}
 
+.series-container{
 
+}
 
 .green{color: green}
 .red{color: red;    font-weight: bold; text-decoration: line-through;}
+
+.grid-col-span-2{
+    grid-column: span 2;
+}
+
+.grid-row-span-2{
+    grid-row:2 span;
+}
