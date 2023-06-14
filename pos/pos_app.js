@@ -12,42 +12,48 @@ fetch("milkteaStock.json")
 function generateFlavor(data){
     data.sort((min, max) => max.amount - min.amount);
     data.forEach(item => {
-        const newItem = document.createElement("div")
+        const newItemRadio = document.createElement("input")
+        newItemRadio.setAttribute("id",item.flavor);
+        newItemRadio.setAttribute("type","radio");
+        newItemRadio.setAttribute("name", "flavors");
+        newItemRadio.setAttribute("value", item.flavor);
 
-        const newItemName = document.createElement("div");
-        newItemName.appendChild(document.createTextNode(item.flavor));
-
-        const newItemInstock = document.createElement("div");
-        const newItemAmount = document.createElement("div");        
+        flavorList.appendChild(newItemRadio)
+        const newItem = document.createElement("label");
+        const newItemName = document.createElement("span")
         const checkmark = document.createElement("span");
-        
-        
-        
+        const newItemInstock = document.createElement("span")
+        const newItemClass = item.instock ? "flavor-item green" : "flavor-item red" ;
+
+        newItem.setAttribute("class", "flavor-container");
+        newItem.setAttribute("for",item.flavor);
+        newItemName.appendChild(document.createTextNode(item.flavor))     
+
         let newItemInstockText;
+        let newItemAmount;
         if (item.instock){
             checkmark.setAttribute("class","checkmark green");
             newItemInstockText = "In Stock";
             checkmark.innerHTML = "&#x2713; ";
             newItemName.setAttribute("class", "flavor-name");
-            newItemAmount.appendChild(document.createTextNode(item.amount));
+            newItemAmount = document.createElement("span");
+            newItemAmount.appendChild(document.createTextNode(item.amount))            
         } else {
             checkmark.setAttribute("class","checkmark red");
             newItemName.setAttribute("class", "flavor-name red");
             newItemInstockText = "Out of Stock";
             checkmark.innerHTML = "&#x2717; ";}
-        
-        newItemInstock.appendChild(checkmark);
-        newItemInstock.appendChild(document.createTextNode( newItemInstockText));
 
-        const newItemClass = item.instock ? "flavor-item green" : "flavor-item red" ;
         newItemInstock.setAttribute("class", newItemClass)
-        
-
-        newItem.setAttribute("id",item.flavor);
-        newItem.setAttribute("class", "flavor-container");
-        newItem.appendChild(newItemName)
-        newItem.appendChild(newItemInstock)
-        newItem.appendChild(newItemAmount)
+        newItemInstock.appendChild(document.createTextNode(newItemInstockText));
+        newItem.appendChild(newItemName);
+        newItem.appendChild(document.createElement("br"));
+        newItem.appendChild(checkmark);
+        newItem.appendChild(newItemInstock);
+        newItem.appendChild(document.createElement("br"));
+        if (newItemAmount){newItem.appendChild(newItemAmount)} else{
+        newItemRadio.disabled=true
+        }
         flavorList.appendChild(newItem)
     });
 };
