@@ -1,0 +1,6 @@
+{
+    "series": ["Milktea", "Fruittea", "Soda", "Frappe"],
+    "sizes": ["Solo", "Double", "Triple", "B1T1"],
+    "addons": ["Pearl", "Nata", "CreamCheese", "CheeseCake", "CreamPuff"]
+  }
+  

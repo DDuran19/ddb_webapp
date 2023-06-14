@@ -1,0 +1,52 @@
+:root{
+    --text: #060407;
+    --background: #f7f2f8;
+    --primary-button: #d0cca9;
+    --secondary-button: #f1e8f2;
+    --accent: #68aca5;
+    
+    --main-theme-biege: #f8d4bc;
+    --main-theme-green: #bcf8d4;
+    --background-gradient: linear-gradient(120deg, var(--main-theme-biege), var(--main-theme-green))
+
+}
+
+*,*::before*::after {
+    box-sizing: border-box;}
+* {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;}
+html{
+    color-scheme: light;}
+body {
+    background-color: var(--background);
+    color: var(--text);
+    overflow: hidden;
+    background: var(--background-gradient)
+}
+.flavors{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 100vh;
+    padding: 10px;
+    width: fit-content;;
+
+}
+.flavor-name{
+    font-weight: bold;
+}
+.flavor-container{
+    border: 2px solid gray;
+    border-radius: 20px;
+    padding-left: 20px;
+    width: 10em;
+    height: auto;
+    background-color: var(--secondary-button);
+    margin-bottom: 1px;
+}
+.flavor-container:hover{background-color: var(--main-theme-green); border-color: black;}
+
+
+
+.green{color: green}
+.red{color: red;    font-weight: bold; text-decoration: line-through;}
