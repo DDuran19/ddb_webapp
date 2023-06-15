@@ -47,30 +47,47 @@
 <body>
     <div class="container">
         <h2>Login</h2>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter your username">
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter your password">
-        </div>
-        <div class="form-group">
-            <button onclick="login()">Login</button>
-        </div>
+        <form id="loginForm" action="pos/pos_app.html" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
     </div>
 
     <script>
-        function login() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
-            if (username === "admin" && password === "admin") {
-                window.location.replace("pos/pos_app.html");
+    // Perform additional checks or validations if needed
+
+    // Make an AJAX request to submit the form data
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", this.action, true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                // Successful login, redirect to pos_app.html
+                console.log("before redirecting")
+                window.location.href = "pos/pos_app.html";
             } else {
-                alert("Invalid username or password. Please try again.");
+                // Invalid credentials or other error occurred
+                alert("Invalid credentials. Please try again.");
             }
         }
+    };
+    var formData = new FormData(this);
+    xhr.send(new URLSearchParams(formData));
+});
+
     </script>
 </body>
 </html>

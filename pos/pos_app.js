@@ -1,3 +1,11 @@
+const isPostRequest = document.referrer.endsWith == "index.html" && window.location.search === "?post"; 
+    // if (!isPostRequest) {
+    //     // Redirect the user to the login page or another appropriate location
+    //     window.location.href = "../index.html";
+    // }
+    console.log(document.referrer)
+    console.log("search: ",window.location)
+
 const CLASS = "class";
 const ID = "id";
 const SPAN = "span";

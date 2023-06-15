@@ -58,7 +58,7 @@ img{
     cursor:pointer;
 }
 .container{
-    font-size: clamp(0.2em, 1vw + 1em,1.5em);
+    font-size: clamp(0.4em, 0.8vw + 0.4em, 1.2em);
     border: 2px solid gray;
     background-color: var(--secondary-button);
 }
@@ -86,10 +86,10 @@ input[type=radio], input[type=checkbox]{
     border-radius: 15px;
 }
 #series-container, #sizes-container{
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 #addon-container{
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 .control-item{
     flex-basis: 47%; 
