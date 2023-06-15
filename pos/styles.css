@@ -16,6 +16,7 @@
     box-sizing: border-box;}
 * {
     margin: 0;
+    padding: 0;
     font-family: 'DM Sans', sans-serif;}
 html{
     color-scheme: light;}
@@ -23,7 +24,7 @@ body {
     background-color: var(--background);
     color: var(--text);
     overflow: hidden;
-    background: var(--background-gradient)
+    background: var(--background-gradient);
 }
 img{
     width: 200px;
@@ -32,7 +33,10 @@ img{
 .main-grid{
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 
+        minmax(auto, max-content) 
+        minmax(auto, max-content)
+        1fr;
 }
 
 .flavors{
@@ -42,30 +46,62 @@ img{
     max-height: 100svh;
     padding: 10px;
     width: fit-content;
+    
 }
 .flavor-name{
     font-weight: bold;
 }
 .flavor-container{
+    border-radius: 20px;
     margin-bottom: 1px;
+    padding-left: 20px;
     display: block;
     cursor:pointer;
 }
 .container{
     font-size: clamp(0.2em, 1vw + 1em,1.5em);
     border: 2px solid gray;
-    border-radius: 20px;
-    padding-left: 20px;
     background-color: var(--secondary-button);
 }
-#flavorList > input{
+input[type=radio]{
     display: none;
     cursor: pointer;
 }
 #flavorList > input:checked + .flavor-container{background-color: var(--main-theme-green); border-color: black;}
 
-.series-container{
-
+#series-container,
+#addon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    padding: min(20px, 4rem);
+    border: 1px solid gray;
+    background-color: var(--background-gradient);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+}
+.series-item, .addon-item{
+    flex-basis: 47%; /* Adjust as needed */
+    min-width: 47%;
+    text-align: center;
+    }
+@media (max-width: 952px) {
+    .series-item, .addon-item {
+        flex-basis: 100%; /* Set to full width in single column */
+    }
+    }
+.container-title{
+    position: absolute;
+    top:-10px;
+    border-radius: 5px;
+    padding-inline: 10px;
+    border: 1px solid gray;
+    background-color: var(--main-theme-biege);
+    font-weight: bold;
+    
 }
 
 .green{color: green}

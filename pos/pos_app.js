@@ -86,19 +86,19 @@ fetch("milktea.json")
 function generateMilkteaComponents(response, Type, htmlElement,htmlContainer){
     let i = 0;
     response[Type].forEach((item) => {
-        const container = document.createElement(DIV);
-        container.setAttribute(CLASS, "container")
         const itemNameRadio = document.createElement(INPUT);
         const itemName = document.createElement(LABEL)
         itemName.appendChild(document.createTextNode(item))
+        itemName.setAttribute("for", item)
+        itemName.setAttribute(CLASS, "container series-item")
         itemNameRadio.setAttribute(ID,item);
         htmlElement === RADIO ? itemNameRadio.setAttribute("name", Type): false;
         itemNameRadio.setAttribute("type",htmlElement);
         itemNameRadio.setAttribute("value", item);
-        
-        container.appendChild(itemNameRadio);
-        container.appendChild(itemName)
-        htmlContainer.appendChild(container);
+
+        htmlContainer.appendChild(itemNameRadio);
+        htmlContainer.appendChild(itemName);
+
         i++
     });    
 }
