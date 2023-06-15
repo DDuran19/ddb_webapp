@@ -4,7 +4,8 @@
     --primary-button: #743c0bc7;
     --secondary-button: #f7f1fe;
     --accent: #02170c;
-    
+
+    --primary-button-hover: #743c0b94 ;
     --main-theme-biege: #f8d4bc;
     --main-theme-green: #bcf8d4;
     --DDB-logo: url("../images/logo/ddb_wide_logo.png");
@@ -61,14 +62,18 @@ img{
     border: 2px solid gray;
     background-color: var(--secondary-button);
 }
-input[type=radio]{
+input[type=radio], input[type=checkbox]{
     display: none;
     cursor: pointer;
 }
-#flavorList > input:checked + .flavor-container{background-color: var(--main-theme-green); border-color: black;}
+#flavorList > input:checked + .flavor-container,
+#series-container>input:checked + .control-item,
+#addon-container>input:checked + .control-item,
+#sizes-container>input:checked + .control-item{background-color: var(--main-theme-green); border-color: black;}
 
 #series-container,
-#addon-container {
+#addon-container,
+#sizes-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem; 
@@ -80,20 +85,20 @@ input[type=radio]{
     backdrop-filter: blur(20px);
     border-radius: 15px;
 }
-#series-container{
-    margin-bottom: 4rem;
+#series-container, #sizes-container{
+    margin-bottom: 3rem;
 }
 #addon-container{
     margin-bottom: 2rem;
 }
-.series-item, .addon-item{
-    flex-basis: 47%; /* Adjust as needed */
+.control-item{
+    flex-basis: 47%; 
     min-width: 47%;
     text-align: center;
     }
 @media (max-width: 952px) {
-    .series-item, .addon-item {
-        flex-basis: 100%; /* Set to full width in single column */
+    .control-item{
+        flex-basis: 100%; 
     }
     }
 .container-title{
@@ -104,21 +109,35 @@ input[type=radio]{
     border: 1px solid gray;
     background-color: var(--main-theme-biege);
     font-weight: bold;
-    
 }
 
 #addToCart {
     color: white;
     padding: 10px 20px;
-    background-color: var(--primary-button); /* Set your desired background color */
+    background-color: var(--primary-button);
     border: 1px solid;
     border-radius: 4px;
     cursor: pointer;
     width: 80%;
     font-weight: bold;
     margin-left: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease;
   }
   
+  #addToCart:hover {
+    background-color: var(--primary-button-hover);
+  }
+  
+  
+
+.transaction{
+    margin-right: 20px;
+}
+
+
 .green{color: green}
 .red{color: red;    font-weight: bold; text-decoration: line-through;}
 

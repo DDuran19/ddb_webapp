@@ -67,8 +67,9 @@ function generateFlavor(data){
     });
 };
 
-const seriesContainer = document.getElementById("series-container")
-const addonContainer = document.getElementById("addon-container")
+const seriesContainer = document.getElementById("series-container");
+const addonContainer = document.getElementById("addon-container");
+const sizesContainer = document.getElementById("sizes-container");
 fetch("milktea.json")
     .then((response) => {
         if (!response.ok){
@@ -79,7 +80,8 @@ fetch("milktea.json")
     })
     .then((response) => {
         generateMilkteaComponents(response,"series", RADIO, seriesContainer);
-        generateMilkteaComponents(response,"addons", RADIO, addonContainer);
+        generateMilkteaComponents(response,"addons", CHECKBOX, addonContainer);
+        generateMilkteaComponents(response,"sizes", RADIO, sizesContainer);
 
     });
 
@@ -90,9 +92,10 @@ function generateMilkteaComponents(response, Type, htmlElement,htmlContainer){
         const itemName = document.createElement(LABEL)
         itemName.appendChild(document.createTextNode(item))
         itemName.setAttribute("for", item)
-        itemName.setAttribute(CLASS, "container series-item")
+        itemName.setAttribute(CLASS, "container control-item")
         itemNameRadio.setAttribute(ID,item);
-        htmlElement === RADIO ? itemNameRadio.setAttribute("name", Type): false;
+        // htmlElement === RADIO ? itemNameRadio.setAttribute("name", Type): false;
+        itemNameRadio.setAttribute("name", Type)
         itemNameRadio.setAttribute("type",htmlElement);
         itemNameRadio.setAttribute("value", item);
 
@@ -102,3 +105,34 @@ function generateMilkteaComponents(response, Type, htmlElement,htmlContainer){
         i++
     });    
 }
+
+function addToCart() {
+    const selectedFlavor = document.querySelector('input[name="flavors"]:checked');
+    const selectedSeries = document.querySelector('input[name="series"]:checked');
+    const selectedAddons = document.querySelectorAll('input[name="addons"]:checked');
+    const selectedSize = document.querySelector('input[name="sizes"]:checked');
+  
+    if (!selectedFlavor || !selectedSeries || !selectedSize) {
+      alert('Please select a flavor, series, and size before adding to the cart.');
+      return;
+    }
+    console.log(selectedAddons)
+    const cartItem = {
+      flavor: selectedFlavor.value,
+      series: selectedSeries.value,
+      addons: Array.from(selectedAddons).map(addon => addon.value),
+      size: selectedSize.value
+    };
+  
+    // Add the cartItem to the cart or perform any other necessary actions
+    // For example:
+    // cart.push(cartItem);
+    console.log(cartItem)
+    selectedFlavor.checked = false;
+    selectedSeries.checked = false;
+    selectedAddons.forEach(addon => addon.checked = false);
+    selectedSize.checked = false;
+    alert(cartItem);
+};
+const addToCartButton = document.getElementById('addToCart');
+addToCartButton.addEventListener('click', addToCart);
