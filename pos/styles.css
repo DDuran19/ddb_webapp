@@ -37,7 +37,6 @@ img{
         minmax(auto, max-content)
         1fr;
 }
-
 .flavors{
     overflow-y: scroll;
     overflow-x: hidden;
@@ -101,6 +100,14 @@ input[type=radio], input[type=checkbox]{
         flex-basis: 100%; 
     }
     }
+@media(max-height: 490px){
+    .controls-container{
+        overflow-y: scroll;
+        max-height: 100vh;
+        max-height: 100svh;
+
+    }
+}
 .container-title{
     position: absolute;
     top:-10px;
